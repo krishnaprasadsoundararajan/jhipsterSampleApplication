@@ -7,14 +7,7 @@ entity Employee {
     dept Integer
 }
 
-entity Department
-{
-  name String,
-  id Integer
-}
-relationship ManyToOne {
-	Employee{dept} to Department
-}
+
 
 // Set service options to all except few
 service all with serviceClass
