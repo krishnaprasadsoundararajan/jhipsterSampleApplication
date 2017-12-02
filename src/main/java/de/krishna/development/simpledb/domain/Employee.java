@@ -34,9 +34,6 @@ public class Employee implements Serializable {
     @Column(name = "dept")
     private Integer dept;
 
-    @ManyToOne
-    private Department dept;
-
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -96,19 +93,6 @@ public class Employee implements Serializable {
 
     public void setDept(Integer dept) {
         this.dept = dept;
-    }
-
-    public Department getDept() {
-        return dept;
-    }
-
-    public Employee dept(Department department) {
-        this.dept = department;
-        return this;
-    }
-
-    public void setDept(Department department) {
-        this.dept = department;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
