@@ -3,7 +3,7 @@
     "relationships": [
         {
             "relationshipType": "many-to-one",
-            "relationshipName": "deptId",
+            "relationshipName": "dept",
             "otherEntityName": "department",
             "otherEntityField": "id"
         }
@@ -22,7 +22,7 @@
             "fieldType": "Long"
         },
         {
-            "fieldName": "deptId",
+            "fieldName": "dept",
             "fieldType": "Integer"
         }
     ],
