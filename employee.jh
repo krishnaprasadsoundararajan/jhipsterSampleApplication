@@ -1,0 +1,21 @@
+
+entity Employee {
+	name String,
+    id Integer,
+    age Integer,
+    salary Long,
+    deptId Integer
+}
+
+entity Department
+{
+  name String,
+  id Integer
+}
+relationship ManyToOne {
+	Employee{deptId} to Department
+}
+
+// Set service options to all except few
+service all with serviceClass
+
