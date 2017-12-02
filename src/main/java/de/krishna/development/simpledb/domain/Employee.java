@@ -31,11 +31,11 @@ public class Employee implements Serializable {
     @Column(name = "salary")
     private Long salary;
 
-    @Column(name = "dept_id")
-    private Integer deptId;
+    @Column(name = "dept")
+    private Integer dept;
 
     @ManyToOne
-    private Department deptId;
+    private Department dept;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -85,30 +85,30 @@ public class Employee implements Serializable {
         this.salary = salary;
     }
 
-    public Integer getDeptId() {
-        return deptId;
+    public Integer getDept() {
+        return dept;
     }
 
-    public Employee deptId(Integer deptId) {
-        this.deptId = deptId;
+    public Employee dept(Integer dept) {
+        this.dept = dept;
         return this;
     }
 
-    public void setDeptId(Integer deptId) {
-        this.deptId = deptId;
+    public void setDept(Integer dept) {
+        this.dept = dept;
     }
 
-    public Department getDeptId() {
-        return deptId;
+    public Department getDept() {
+        return dept;
     }
 
-    public Employee deptId(Department department) {
-        this.deptId = department;
+    public Employee dept(Department department) {
+        this.dept = department;
         return this;
     }
 
-    public void setDeptId(Department department) {
-        this.deptId = department;
+    public void setDept(Department department) {
+        this.dept = department;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
@@ -139,7 +139,7 @@ public class Employee implements Serializable {
             ", name='" + getName() + "'" +
             ", age=" + getAge() +
             ", salary=" + getSalary() +
-            ", deptId=" + getDeptId() +
+            ", dept=" + getDept() +
             "}";
     }
 }

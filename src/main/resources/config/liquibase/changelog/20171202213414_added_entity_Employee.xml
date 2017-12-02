@@ -34,11 +34,11 @@
                 <constraints nullable="true" />
             </column>
 
-            <column name="dept_id" type="integer">
+            <column name="dept" type="integer">
                 <constraints nullable="true" />
             </column>
 
-            <column name="dept_id_id" type="bigint">
+            <column name="dept_id" type="bigint">
                 <constraints nullable="true" />
             </column>
 

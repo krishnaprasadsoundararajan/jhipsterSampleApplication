@@ -48,8 +48,8 @@ public class EmployeeResourceIntTest {
     private static final Long DEFAULT_SALARY = 1L;
     private static final Long UPDATED_SALARY = 2L;
 
-    private static final Integer DEFAULT_DEPT_ID = 1;
-    private static final Integer UPDATED_DEPT_ID = 2;
+    private static final Integer DEFAULT_DEPT = 1;
+    private static final Integer UPDATED_DEPT = 2;
 
     @Autowired
     private EmployeeRepository employeeRepository;
@@ -95,7 +95,7 @@ public class EmployeeResourceIntTest {
             .name(DEFAULT_NAME)
             .age(DEFAULT_AGE)
             .salary(DEFAULT_SALARY)
-            .deptId(DEFAULT_DEPT_ID);
+            .dept(DEFAULT_DEPT);
         return employee;
     }
 
@@ -122,7 +122,7 @@ public class EmployeeResourceIntTest {
         assertThat(testEmployee.getName()).isEqualTo(DEFAULT_NAME);
         assertThat(testEmployee.getAge()).isEqualTo(DEFAULT_AGE);
         assertThat(testEmployee.getSalary()).isEqualTo(DEFAULT_SALARY);
-        assertThat(testEmployee.getDeptId()).isEqualTo(DEFAULT_DEPT_ID);
+        assertThat(testEmployee.getDept()).isEqualTo(DEFAULT_DEPT);
     }
 
     @Test
@@ -158,7 +158,7 @@ public class EmployeeResourceIntTest {
             .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME.toString())))
             .andExpect(jsonPath("$.[*].age").value(hasItem(DEFAULT_AGE)))
             .andExpect(jsonPath("$.[*].salary").value(hasItem(DEFAULT_SALARY.intValue())))
-            .andExpect(jsonPath("$.[*].deptId").value(hasItem(DEFAULT_DEPT_ID)));
+            .andExpect(jsonPath("$.[*].dept").value(hasItem(DEFAULT_DEPT)));
     }
 
     @Test
@@ -175,7 +175,7 @@ public class EmployeeResourceIntTest {
             .andExpect(jsonPath("$.name").value(DEFAULT_NAME.toString()))
             .andExpect(jsonPath("$.age").value(DEFAULT_AGE))
             .andExpect(jsonPath("$.salary").value(DEFAULT_SALARY.intValue()))
-            .andExpect(jsonPath("$.deptId").value(DEFAULT_DEPT_ID));
+            .andExpect(jsonPath("$.dept").value(DEFAULT_DEPT));
     }
 
     @Test
@@ -202,7 +202,7 @@ public class EmployeeResourceIntTest {
             .name(UPDATED_NAME)
             .age(UPDATED_AGE)
             .salary(UPDATED_SALARY)
-            .deptId(UPDATED_DEPT_ID);
+            .dept(UPDATED_DEPT);
 
         restEmployeeMockMvc.perform(put("/api/employees")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -216,7 +216,7 @@ public class EmployeeResourceIntTest {
         assertThat(testEmployee.getName()).isEqualTo(UPDATED_NAME);
         assertThat(testEmployee.getAge()).isEqualTo(UPDATED_AGE);
         assertThat(testEmployee.getSalary()).isEqualTo(UPDATED_SALARY);
-        assertThat(testEmployee.getDeptId()).isEqualTo(UPDATED_DEPT_ID);
+        assertThat(testEmployee.getDept()).isEqualTo(UPDATED_DEPT);
     }
 
     @Test

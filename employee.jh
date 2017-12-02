@@ -4,7 +4,7 @@ entity Employee {
     id Integer,
     age Integer,
     salary Long,
-    deptId Integer
+    dept Integer
 }
 
 entity Department
@@ -13,7 +13,7 @@ entity Department
   id Integer
 }
 relationship ManyToOne {
-	Employee{deptId} to Department
+	Employee{dept} to Department
 }
 
 // Set service options to all except few
